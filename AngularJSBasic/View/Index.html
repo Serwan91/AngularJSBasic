@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <title>SimplePractices &mdash; Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <!-- Syntax Highlighter  -->
+    <link rel="stylesheet" href="../Content/style.css">
+    <style>
+
+    </style>
+</head>
+<body ng-app="simplepractices">
+    <div id="page" ng-controller="indexController">
+        <div class="container">
+            <div class="row">
+                <div class="nav navbar-static-top" style="background-color:aquamarine">
+                    <div class="col-xs-3">
+                        <a class="h3" href="/">MetaData Documentation</a>
+                    </div>
+                    <div class="col-xs-9">
+                        <label>Version :</label>
+                        <select ng-options="o as o for o in VersionItems" ng-model="selecteditem" ng-change="getList()">
+                            <option value="">--select--</option>
+                        </select>
+
+                        <label>Object Model :</label>
+                        <select>
+                            <option>--select--</option>
+                            <option ng-repeat="item in VersionItems" value="{{item}}">{{item}}</option>
+                        </select>
+
+                        <label>Object Model :</label>
+                        <select>
+                            <option>--select--</option>
+                            <option ng-repeat="item in indexCtrl.VersionItems()" value="{{item}}">{{item}}</option>
+                        </select>
+
+                        <div class="btn btn-primary clearfix"> Submit </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row display">
+                <div class="col-lg-3 inner">
+                    <ul id="filters" class="clearfix animate-box" ng-repeat="contentitem in VersionContentList">
+                        <li><a href="#" ng-click="SetDetailSection(contentitem)">{{contentitem}}</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-9">
+                    <div class="inner">
+                        <div id="contentdiv" ng-include="contentpath">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <!-- AngularJS -->
+    <script type="text/javascript" src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="../Scripts/angular-sanitize.js"></script>
+    <script type="text/javascript" src="../Scripts/angular-route.min.js"></script>
+
+
+
+
+    <script type="text/javascript" src="../View/script/Confluecnce.angular.js"></script>
+    <script type="text/javascript" src="../View/script/Confluence.Service.js"></script>
+</body>
+
+</html>

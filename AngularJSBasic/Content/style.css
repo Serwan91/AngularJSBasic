@@ -1,0 +1,22 @@
+﻿.inner {
+    background: aliceblue;
+    border: 1px solid blue;
+    overflow-x: scroll;
+    min-height:38em;
+}
+
+.display {
+    min-height: 30em;
+    background-color:darkgray
+}
+
+.container {
+    margin-left: 15px;
+    width:1310px
+}
+
+select {
+    margin-top:1em;
+    width:10em;
+    height:2em;
+}
